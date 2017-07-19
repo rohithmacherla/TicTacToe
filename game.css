@@ -1,0 +1,20 @@
+body {
+    background-color: lightpink;
+    height: 95vh;
+    border: white 3px solid;
+    box-sizing: border-box;
+}
+.wrap{
+    background-color: lightgrey;
+    height: 100%;
+    width: 65%;
+    margin: 0 auto;
+}
+.title {
+    background-color: lightgreen;
+    height: 25%;
+}
+.board {
+    background-color: lightblue;
+    height: 75%;
+}
