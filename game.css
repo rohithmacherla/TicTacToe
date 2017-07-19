@@ -12,7 +12,7 @@ body {
     margin: 0 auto;
 }
 .title {
-    background-color: lightgreen;
+    background-color: lightgrey;
     height: 25%;
 }
 .board {
@@ -31,13 +31,24 @@ body {
     justify-content: center;
     align-content: center;
     transition: .7s;
+    position: relative;
 }
 .square:hover {
     cursor: pointer;
-    background-color: magenta;
+    background-color: lime;
 }
 p {
     margin: 0;
     font-size: 5em;
     padding-top: 14%;
+}
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 6em;
+}
+h2 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
 }
