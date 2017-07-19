@@ -1,3 +1,4 @@
+var status1 = $('#status');
 var square = $('.square');
 var square1 = $('#square1');
 var square2 = $('#square2');
@@ -16,7 +17,8 @@ var state = {
     playerOne: "X",
     playerTwo: "O",
     currentTurn: "X",
-    board: ["error", "", "", "", "", "", "","","",""]
+    board: ["error", "", "", "", "", "", "","","",""],
+    status: "Player One's Turn"
 };
 
 var render = function() {
@@ -24,7 +26,9 @@ var render = function() {
         console.log(i, state.board[i]);
         squares[i].html(state.board[i]);
     }
+    status1.html(state.status);
 };
+
 
 square.click(function() {
     if($(this).find('p').html().length === 0) {
@@ -32,9 +36,11 @@ square.click(function() {
         console.log(state.currentTurn);
         state.board[id] = state.currentTurn;
         state.currentTurn = (state.currentTurn == state.playerOne)?state.playerTwo:state.playerOne;
+        state.status = (state.status === "Player One's Turn")?"Player Two's Turn":"Player One's Turn";
         render();
     }
 });
+
 
 
 
