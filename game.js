@@ -42,6 +42,15 @@ var render = function() {
     status1.html(state.status);
 };
 
+var checkifdraw = function() {
+    for(var i = 1; i <=9; i++) {
+        if(state.board[i] === "") {
+            return false;
+        }
+    }
+    alert("Draw! :(\nThe game will now reset!");
+    resetBoard();
+}
 
 square.click(function() {
     if($(this).find('p').html().length === 0) {
@@ -55,6 +64,8 @@ square.click(function() {
         state.currentTurn = (state.currentTurn == state.playerOne)?state.playerTwo:state.playerOne;
         if(didWin) {
             resetBoard();
+        } else {
+            checkifdraw();
         }
     }
 });
