@@ -25,6 +25,15 @@ var state = {
     status: "Player One's Turn"
 };
 
+var resetBoard = function() {
+    state.playerOne = "X";
+    state.playerTwo = "O";
+    state.currentTurn = "X";
+    state.board = ["error", "", "", "", "", "", "","","",""];
+    state.status = "Player One's Turn";
+    render();
+}
+
 var render = function() {
     for(var i = 1; i <= 9; i++) {
         console.log(i, state.board[i]);
@@ -50,9 +59,6 @@ square.click(function() {
     }
 });
 
-var resetBoard = function() {
-    
-}
 
 var checkWinner = function() {
     for(var i = 0; i < winningCombinations.length; i++) {
@@ -62,7 +68,7 @@ var checkWinner = function() {
         if(state.board[a] === "X" || state.board[b] === "O"){
             if(state.board[a] === state.board[b] && state.board[b] === state.board[c]) {
                 alert("Winner :)! Congrats " + state.currentTurn + "\nThe game will now reset!");
-                return 5;
+                return true;
             }
         }
     }
